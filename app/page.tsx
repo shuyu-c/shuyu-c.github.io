@@ -7,7 +7,11 @@ type Language = "zh" | "en";
 
 const copy = {
   zh: {
-    nav: { research: "研究", papers: "论文", work: "经历", about: "关于" },
+    nav: { research: "研究", papers: "论文", work: "经历", about: "关于", background: "背景" },
+    aboutHeading: "关于我",
+    institution: "复旦大学",
+    profileInterests: "研究方向",
+    profileLinks: { email: "邮箱", github: "GitHub" },
     heroEyebrow: "复旦大学 · 数据科学博士生",
     heroTitle: "陈姝宇",
     heroRole: "隐私保护机器学习研究者",
@@ -127,7 +131,11 @@ const copy = {
     copyright: "陈姝宇 · 上海",
   },
   en: {
-    nav: { research: "Research", papers: "Papers", work: "Experience", about: "About" },
+    nav: { research: "Research", papers: "Publications", work: "Experience", about: "About", background: "Background" },
+    aboutHeading: "About",
+    institution: "Fudan University",
+    profileInterests: "Research Interests",
+    profileLinks: { email: "Email", github: "GitHub" },
     heroEyebrow: "Ph.D. Candidate in Data Science · Fudan University",
     heroTitle: "Shuyu Chen",
     heroRole: "Privacy-Preserving Machine Learning Researcher",
@@ -268,16 +276,17 @@ export default function Home() {
   }, [language]);
 
   return (
-    <main>
+    <main className="site-shell" id="top">
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Shuyu Chen home">
-          {language === "zh" ? "陈姝宇" : "Shuyu Chen"}<span> / Fudan</span>
+          {language === "zh" ? "陈姝宇" : "Shuyu Chen"}
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#research">{t.nav.research}</a>
-          <a href="#papers">{t.nav.papers}</a>
-          <a href="#work">{t.nav.work}</a>
           <a href="#about">{t.nav.about}</a>
+          <a href="#papers">{t.nav.papers}</a>
+          <a href="#research">{t.nav.research}</a>
+          <a href="#work">{t.nav.work}</a>
+          <a href="#background">{t.nav.background}</a>
         </nav>
         <div className="language-switch" aria-label="Language">
           <button className={language === "zh" ? "active" : ""} onClick={() => setLanguage("zh")} aria-pressed={language === "zh"}>中</button>
@@ -286,18 +295,8 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow">{t.heroEyebrow}</p>
-          <h1>{t.heroTitle}</h1>
-          <p className="hero-role">{t.heroRole}</p>
-          <p className="hero-intro">{t.heroIntro}</p>
-          <div className="hero-actions">
-            <a className="primary-link" href="#research">{t.researchCta}<span aria-hidden="true">↘</span></a>
-            <a className="text-link" href="#papers">{t.papersCta}<span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-        <div className="portrait-wrap">
+      <div className="page-grid">
+        <aside className="profile-sidebar" aria-label={language === "zh" ? "个人信息" : "Profile"}>
           <div className="portrait-frame">
             <Image
               src="/portrait.jpg"
@@ -307,111 +306,136 @@ export default function Home() {
               priority
             />
           </div>
-          <div className="current-focus">
+          <div className="profile-heading">
+            <h1>{t.heroTitle}</h1>
+            <p className="profile-role">{t.heroRole}</p>
+            <p className="profile-institution">{t.institution}</p>
+          </div>
+          <div className="profile-links" aria-label={language === "zh" ? "联系方式" : "Contact links"}>
+            <a href="mailto:23110240005@m.fudan.edu.cn"><span aria-hidden="true">@</span>{t.profileLinks.email}</a>
+            <a href="https://github.com/stellasuc" target="_blank" rel="noreferrer"><span aria-hidden="true">GH</span>{t.profileLinks.github}</a>
+          </div>
+          <div className="interest-card">
+            <h2>{t.profileInterests}</h2>
+            <ol>
+              {t.researchItems.map((item) => <li key={item.title}>{item.title}</li>)}
+            </ol>
+          </div>
+          <div className="focus-card">
             <span>{t.current}</span>
             <p>{t.currentText}</p>
           </div>
-        </div>
-      </section>
+        </aside>
 
-      <section className="section research-section" id="research">
-        <div className="section-heading">
-          <p className="kicker">{t.researchKicker}</p>
-          <h2>{t.researchTitle}</h2>
-          <p>{t.researchIntro}</p>
-        </div>
-        <div className="research-path">
-          {t.researchItems.map((item, index) => (
-            <article className="research-step" key={item.title}>
-              <div className="step-top"><span>0{index + 1}</span><time>{item.years}</time></div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <div className="content-column">
+          <section className="content-section about-intro" id="about">
+            <p className="eyebrow">{t.heroEyebrow}</p>
+            <h2>{t.aboutHeading}</h2>
+            <p className="lead">{t.heroIntro}</p>
+            <p>{t.researchIntro}</p>
+          </section>
 
-      <section className="section papers-section" id="papers">
-        <div className="section-heading papers-heading">
-          <div>
-            <p className="kicker">{t.papersKicker}</p>
-            <h2>{t.papersTitle}</h2>
-          </div>
-          <p>{t.papersIntro}</p>
-        </div>
-        <div className="paper-list">
-          {t.papers.map((paper, index) => (
-            <article className="paper" key={paper.title}>
-              <div className="paper-index">{String(index + 1).padStart(2, "0")}</div>
-              <div className="paper-main">
-                <div className="paper-meta"><span>{paper.venue}</span>{paper.first && <em>{t.firstAuthor}</em>}</div>
-                <h3>{paper.title}</h3>
-                <p className="authors"><HighlightName authors={paper.authors} /></p>
-                <p className="paper-note">{paper.note}</p>
-              </div>
-              <a className="pdf-link" href={paper.href} target="_blank" rel="noreferrer" aria-label={`${t.pdf}: ${paper.title}`}>
-                <span>{t.pdf}</span><span aria-hidden="true">↗</span>
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section work-section" id="work">
-        <div className="section-heading compact-heading">
-          <p className="kicker">{t.workKicker}</p>
-          <h2>{t.workTitle}</h2>
-        </div>
-        <div className="work-list">
-          {t.workItems.map((item) => (
-            <article className="work-item" key={item.title}>
-              <time>{item.date}</time>
+          <section className="content-section papers-section" id="papers">
+            <div className="section-heading inline-heading">
               <div>
-                <h3>{item.title}</h3>
-                <p className="partner">{item.partner}</p>
+                <p className="kicker">{t.papersKicker}</p>
+                <h2>{t.papersTitle}</h2>
               </div>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+              <p>{t.papersIntro}</p>
+            </div>
+            <div className="paper-list">
+              {t.papers.map((paper) => (
+                <article className="paper" key={paper.title}>
+                  <div className="paper-topline">
+                    <span>{paper.venue}</span>
+                    {paper.first && <em>{t.firstAuthor}</em>}
+                  </div>
+                  <h3>{paper.title}</h3>
+                  <p className="authors"><HighlightName authors={paper.authors} /></p>
+                  <p className="paper-note">{paper.note}</p>
+                  <a className="pdf-link" href={paper.href} target="_blank" rel="noreferrer" aria-label={`${t.pdf}: ${paper.title}`}>
+                    <span>{t.pdf}</span><span aria-hidden="true">↗</span>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
 
-      <section className="section about-section" id="about">
-        <div className="section-heading compact-heading">
-          <p className="kicker">{t.aboutKicker}</p>
-          <h2>{t.aboutTitle}</h2>
-        </div>
-        <div className="about-grid">
-          <div>
-            <h3>{t.education}</h3>
-            {t.educationItems.map(([school, degree, years]) => (
-              <div className="education-item" key={school}>
-                <div><strong>{school}</strong><span>{degree}</span></div><time>{years}</time>
+          <section className="content-section research-section" id="research">
+            <div className="section-heading">
+              <p className="kicker">{t.researchKicker}</p>
+              <h2>{t.researchTitle}</h2>
+            </div>
+            <div className="research-path">
+              {t.researchItems.map((item, index) => (
+                <article className="research-step" key={item.title}>
+                  <div className="step-marker">0{index + 1}</div>
+                  <div>
+                    <time>{item.years}</time>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="content-section work-section" id="work">
+            <div className="section-heading">
+              <p className="kicker">{t.workKicker}</p>
+              <h2>{t.workTitle}</h2>
+            </div>
+            <div className="work-list">
+              {t.workItems.map((item) => (
+                <article className="work-item" key={item.title}>
+                  <time>{item.date}</time>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p className="partner">{item.partner}</p>
+                    <p>{item.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="content-section background-section" id="background">
+            <div className="section-heading">
+              <p className="kicker">{t.aboutKicker}</p>
+              <h2>{t.aboutTitle}</h2>
+            </div>
+            <div className="about-grid">
+              <div>
+                <h3>{t.education}</h3>
+                {t.educationItems.map(([school, degree, years]) => (
+                  <div className="education-item" key={school}>
+                    <div><strong>{school}</strong><span>{degree}</span></div><time>{years}</time>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div>
-            <h3>{t.experience}</h3>
-            <ul>{t.experienceItems.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
-          <div>
-            <h3>{t.honors}</h3>
-            <ul>{t.honorItems.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
+              <div>
+                <h3>{t.experience}</h3>
+                <ul>{t.experienceItems.map((item) => <li key={item}>{item}</li>)}</ul>
+              </div>
+              <div>
+                <h3>{t.honors}</h3>
+                <ul>{t.honorItems.map((item) => <li key={item}>{item}</li>)}</ul>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       <footer>
-        <div className="footer-main">
-          <p className="kicker">Contact</p>
-          <h2>{t.footerTitle}</h2>
-          <p>{t.footerText}</p>
-          <div className="footer-links">
-            <a href="mailto:23110240005@m.fudan.edu.cn">{t.email}<span>↗</span></a>
-            <a href="https://github.com/stellasuc" target="_blank" rel="noreferrer">{t.github}<span>↗</span></a>
-          </div>
+        <div>
+          <strong>{t.footerTitle}</strong>
+          <span>{t.footerText}</span>
         </div>
-        <div className="footer-bottom"><span>© 2026 {t.copyright}</span><a href="#top">↑ Top</a></div>
+        <div className="footer-links">
+          <a href="mailto:23110240005@m.fudan.edu.cn">{t.email} ↗</a>
+          <a href="https://github.com/stellasuc" target="_blank" rel="noreferrer">{t.github} ↗</a>
+        </div>
+        <p>© 2026 {t.copyright}</p>
       </footer>
     </main>
   );
