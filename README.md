@@ -13,6 +13,6 @@ npm run dev
 
 The site is statically exported and deployed to GitHub Pages by `.github/workflows/deploy.yml` whenever `main` is updated.
 
-Public URL: <https://shuyu-chen-person.github.io>
+Public URL: <https://shuyu-c.github.io>
 
 Publication PDFs are mirrored from the public publication page of Fudan University's Data Security and Governance Lab.

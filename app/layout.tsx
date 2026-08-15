@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shuyu-chen-person.github.io"),
+  metadataBase: new URL("https://shuyu-c.github.io"),
   title: "陈姝宇 Shuyu Chen · Privacy-Preserving Machine Learning",
   description:
     "Shuyu Chen is a Ph.D. candidate at Fudan University researching privacy-preserving machine learning, secure data joins, and private LLM adaptation.",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://shuyu-chen-person.github.io",
+    url: "https://shuyu-c.github.io",
     title: "Shuyu Chen · Privacy-Preserving Machine Learning",
     description: "Research on secure machine learning, private data joins, and privacy-preserving LLMs.",
     images: [{ url: "/og.png", width: 1792, height: 1024, alt: "Shuyu Chen — Privacy-Preserving Machine Learning" }],

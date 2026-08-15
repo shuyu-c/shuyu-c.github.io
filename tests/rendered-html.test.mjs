@@ -17,7 +17,7 @@ test("exports the complete bilingual academic homepage", async () => {
   assert.match(html, /Kona: An Efficient Privacy-Preservation Framework/);
   assert.match(html, /aria-pressed="true">中<\/button>/);
   assert.match(html, /aria-pressed="false">EN<\/button>/);
-  assert.match(html, /https:\/\/shuyu-chen-person\.github\.io\/og\.png/);
+  assert.match(html, /https:\/\/shuyu-c\.github\.io\/og\.png/);
 });
 
 test("ships all public paper PDFs and key visual assets", async () => {
