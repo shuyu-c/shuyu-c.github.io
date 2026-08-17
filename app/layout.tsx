@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://shuyu-c.github.io"),
   title: "陈姝宇 Shuyu Chen · Privacy-Preserving Machine Learning",
   description:
-    "Shuyu Chen is a Ph.D. candidate at Fudan University researching privacy-preserving machine learning, secure data joins, and private LLM adaptation.",
+    "Shuyu Chen received her Ph.D. in Data Science from Fudan University and researches secure multi-party computation and privacy-preserving machine learning.",
   icons: {
     icon: "/portrait.jpg",
     shortcut: "/portrait.jpg",
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://shuyu-c.github.io",
     title: "Shuyu Chen · Privacy-Preserving Machine Learning",
-    description: "Research on secure machine learning, private data joins, and privacy-preserving LLMs.",
+    description: "Secure multi-party computation, vulnerability detection, privacy-preserving machine learning, and secure data alignment.",
     images: [{ url: "/og.png", width: 1792, height: 1024, alt: "Shuyu Chen — Privacy-Preserving Machine Learning" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Shuyu Chen · Privacy-Preserving Machine Learning",
-    description: "Research on secure machine learning, private data joins, and privacy-preserving LLMs.",
+    description: "Secure multi-party computation, vulnerability detection, privacy-preserving machine learning, and secure data alignment.",
     images: ["/og.png"],
   },
 };
