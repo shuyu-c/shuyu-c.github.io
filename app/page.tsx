@@ -16,7 +16,7 @@ const copy = {
     email: "邮箱",
     github: "GitHub",
     about: [
-      <>我目前是复旦大学计算与智能创新学院 <strong>2023 级数据科学博士研究生</strong>。2021 年至 2023 年，我在复旦大学计算机软件与理论硕士项目学习，随后通过<strong>硕转博</strong>继续攻读博士学位，导师为 <a href="https://dsg.fudan.edu.cn/#/hwl" target="_blank" rel="noreferrer">韩伟力教授</a>。此前，我于 2021 年获得天津大学软件工程学士学位，本科期间专业排名前 2%。</>,
+      <>我目前是复旦大学计算与智能创新学院 <strong>2023 级数据科学博士研究生</strong>。2021 年至 2023 年，我在复旦大学读计算机软件与理论硕士，随后通过<strong>硕转博</strong>继续攻读博士学位，导师为 <a href="https://dsg.fudan.edu.cn/#/hwl" target="_blank" rel="noreferrer">韩伟力教授</a>。此前，我于 2021 年获得天津大学软件工程学士学位，本科期间专业排名前 2%。</>,
       <>我的研究方向是<strong>人工智能数据安全</strong>，主要包括基于安全多方计算的隐私保护数据对齐、模型训练与推理，以及隐私保护大模型微调。相关成果发表于 VLDB、ACM CCS、ICML 等顶会。</>,
     ],
     sections: { publications: "论文", experience: "经历", education: "教育经历", service: "学术服务", honors: "获奖情况" },
