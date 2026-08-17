@@ -21,10 +21,10 @@ const copy = {
     ],
     sections: { publications: "论文", experience: "经历", education: "教育经历", service: "学术服务", honors: "获奖情况" },
     publicationMeta: {
-      bifrost: "第 52 届国际超大型数据库会议（VLDB），2026。",
-      mpcarbiter: "第 33 届 ACM 计算机与通信安全会议（CCS），2026。",
-      kona: "第 42 届国际机器学习大会（ICML），2025。",
-      blitzbough: "首届世界人工智能大会学术会议（WAICA），2026。",
+      bifrost: "Proceedings of the 52nd International Conference on Very Large Data Bases (VLDB), 2026.",
+      mpcarbiter: "Proceedings of the 33rd ACM Conference on Computer and Communications Security (CCS), 2026.",
+      kona: "Proceedings of the 42nd International Conference on Machine Learning (ICML), 2025.",
+      blitzbough: "Proceedings of the Inaugural WAIC Academic Conference (WAICA), 2026.",
     },
     pdf: "PDF",
     experience: {
