@@ -118,7 +118,7 @@ const copy = {
     ],
     experience: "实践与服务",
     experienceItems: [
-      "Microsoft · 软件开发工程师实习生（2020）",
+      "Microsoft · 实习经历（2020）",
       "IEEE TIFS、IEEE TDSC 审稿人",
       "参与国家重点研发计划、国家密码科学基金重点项目与国家自然科学基金项目",
     ],
@@ -242,7 +242,7 @@ const copy = {
     ],
     experience: "Practice & service",
     experienceItems: [
-      "Microsoft · Software Engineering Intern (2020)",
+      "Microsoft · Internship (2020)",
       "Reviewer for IEEE TIFS and IEEE TDSC",
       "Research contributor to national programs in secure multi-party learning, cryptography, and data governance",
     ],
