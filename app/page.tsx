@@ -7,7 +7,7 @@ type Language = "zh" | "en";
 
 const copy = {
   zh: {
-    nav: { home: "主页", about: "关于我", papers: "论文", experience: "经历", education: "教育", service: "学术服务", honors: "获奖" },
+    nav: { home: "主页", about: "关于我", papers: "论文", experience: "工作经历", education: "教育", service: "学术服务", honors: "获奖" },
     name: "陈姝宇",
     status: "复旦大学数据科学博士研究生",
     sidebarBio: "研究方向为安全多方计算及其在隐私保护机器学习中的应用。",
@@ -19,7 +19,7 @@ const copy = {
       <>我目前是复旦大学计算与智能创新学院 <strong>2023 级数据科学博士研究生</strong>。2021 年至 2023 年，我在复旦大学读计算机软件与理论硕士，随后通过<strong>硕转博</strong>继续攻读博士学位，导师为 <a href="https://dsg.fudan.edu.cn/#/hwl" target="_blank" rel="noreferrer">韩伟力教授</a>。此前，我于 2021 年获得天津大学软件工程学士学位，本科期间专业排名前 2%。</>,
       <>我的研究方向是<strong>人工智能数据安全</strong>，主要包括基于安全多方计算的隐私保护数据对齐、模型训练与推理，以及隐私保护大模型微调。相关成果发表于 VLDB、ACM CCS、ICML 等顶会。</>,
     ],
-    sections: { publications: "论文", experience: "经历", education: "教育经历", service: "学术服务", honors: "获奖情况" },
+    sections: { publications: "论文", experience: "工作经历", education: "教育经历", service: "学术服务", honors: "获奖情况" },
     publicationMeta: {
       bifrost: "Proceedings of the 52nd International Conference on Very Large Data Bases (VLDB), 2026.",
       mpcarbiter: "Proceedings of the 33rd ACM Conference on Computer and Communications Security (CCS), 2026.",
@@ -51,7 +51,7 @@ const copy = {
     ],
   },
   en: {
-    nav: { home: "Home", about: "About Me", papers: "Publications", experience: "Experience", education: "Education", service: "Service", honors: "Honors" },
+    nav: { home: "Home", about: "About Me", papers: "Publications", experience: "Work Experience", education: "Education", service: "Service", honors: "Honors" },
     name: "Shuyu Chen",
     status: "Ph.D. Student in Data Science at Fudan University",
     sidebarBio: "My research focuses on secure multi-party computation and its applications in privacy-preserving machine learning.",
@@ -63,7 +63,7 @@ const copy = {
       <>I am currently a <strong>2023-entry Ph.D. student in Data Science</strong> at the College of Computing and Intelligence Innovation, Fudan University. From 2021 to 2023, I studied in the M.S. program in Computer Software and Theory at Fudan University before transferring into the Ph.D. program. I am advised by <a href="https://dsg.fudan.edu.cn/#/hwl" target="_blank" rel="noreferrer">Prof. Weili Han</a>. Before that, I received my B.Eng. in Software Engineering from Tianjin University in 2021, ranking in the top 2% of my major.</>,
       <>My research focuses on <strong>AI data security</strong>, primarily including privacy-preserving data alignment, model training and inference based on secure multi-party computation, as well as privacy-preserving fine-tuning of large language models. My work has been published at leading venues including VLDB, ACM CCS, and ICML.</>,
     ],
-    sections: { publications: "Publications", experience: "Experience", education: "Education", service: "Academic Service", honors: "Honors and Awards" },
+    sections: { publications: "Publications", experience: "Work Experience", education: "Education", service: "Academic Service", honors: "Honors and Awards" },
     publicationMeta: {
       bifrost: "Proceedings of the 52nd International Conference on Very Large Data Bases (VLDB), 2026.",
       mpcarbiter: "Proceedings of the 33rd ACM Conference on Computer and Communications Security (CCS), 2026.",
